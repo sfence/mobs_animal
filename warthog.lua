@@ -4,7 +4,7 @@ local S = mobs.intllib
 
 -- Warthog originally by KrupnoPavel, B3D model by sirrobzeroone
 
-mobs:register_mob("mobs_animal:pumba", {
+mobs:register_mob("hades_animals:pumba", {
 	stepheight = 0.6,
 	type = "animal",
 	passive = false,
@@ -74,7 +74,7 @@ end
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:pumba",
+	name = "hades_animals:pumba",
 	nodes = spawn_on,
 	neighbors = spawn_by,
 	min_light = 14,
@@ -86,10 +86,10 @@ mobs:spawn({
 })
 end
 
-mobs:register_egg("mobs_animal:pumba", S("Warthog"), "mobs_pumba_inv.png")
+mobs:register_egg("hades_animals:pumba", S("Warthog"), "mobs_pumba_inv.png")
 
 
-mobs:alias_mob("mobs:pumba", "mobs_animal:pumba") -- compatibility
+mobs:alias_mob("mobs:pumba", "hades_animals:pumba") -- compatibility
 
 
 -- raw porkchop

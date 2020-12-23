@@ -24,7 +24,7 @@ local all_colours = {
 
 for _, col in ipairs(all_colours) do
 
-	mobs:register_mob("mobs_animal:sheep_"..col[1], {
+	mobs:register_mob("hades_animals:sheep_"..col[1], {
 		stay_near = {"farming:straw", 10},
 		stepheight = 0.6,
 		type = "animal",
@@ -177,7 +177,7 @@ for _, col in ipairs(all_colours) do
 
 							self.object:remove()
 
-							local mob = minetest.add_entity(pos, "mobs_animal:sheep_" .. colr)
+							local mob = minetest.add_entity(pos, "hades_animals:sheep_" .. colr)
 							local ent = mob:get_luaentity()
 
 							ent.owner = name
@@ -205,17 +205,17 @@ for _, col in ipairs(all_colours) do
 		end
 	})
 
-mobs:register_egg("mobs_animal:sheep_"..col[1], S("@1 Sheep", col[2]), "wool_"..col[1]..".png^mobs_sheep_inv.png")
+mobs:register_egg("hades_animals:sheep_"..col[1], S("@1 Sheep", col[2]), "wool_"..col[1]..".png^mobs_sheep_inv.png")
 
 	-- compatibility
-	mobs:alias_mob("mobs:sheep_" .. col[1], "mobs_animal:sheep_" .. col[1])
+	mobs:alias_mob("mobs:sheep_" .. col[1], "hades_animals:sheep_" .. col[1])
 
 end
 
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:sheep_white",
+	name = "hades_animals:sheep_white",
 	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
 	neighbors = {"group:grass"},
 	min_light = 14,
@@ -228,7 +228,7 @@ mobs:spawn({
 end
 
 
-mobs:alias_mob("mobs:sheep", "mobs_animal:sheep_white") -- compatibility
+mobs:alias_mob("mobs:sheep", "hades_animals:sheep_white") -- compatibility
 
 -- raw mutton
 minetest.register_craftitem(":mobs:mutton_raw", {

@@ -57,7 +57,9 @@ mobs:spawn({
 })
 ]]--
 
+-- NO SPAWNS IN HADES REVISITED
 
+--[[
 -- Bee
 
 mobs:spawn({
@@ -193,3 +195,4 @@ mobs:spawn({
 	max_height = 200,
 	day_toggle = true,
 })
+--]]

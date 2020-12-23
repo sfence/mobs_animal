@@ -4,7 +4,7 @@ local S = mobs.intllib
 
 -- Penguin by D00Med
 
-mobs:register_mob("mobs_animal:penguin", {
+mobs:register_mob("hades_animals:penguin", {
 stepheight = 0.6,
 	type = "animal",
 	passive = true,
@@ -62,7 +62,7 @@ stepheight = 0.6,
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:penguin",
+	name = "hades_animals:penguin",
 	nodes = {"default:snowblock"},
 	min_light = 14,
 	interval = 60,
@@ -73,4 +73,4 @@ mobs:spawn({
 })
 end
 
-mobs:register_egg("mobs_animal:penguin", S("Penguin"), "mobs_penguin_inv.png")
+mobs:register_egg("hades_animals:penguin", S("Penguin"), "mobs_penguin_inv.png")

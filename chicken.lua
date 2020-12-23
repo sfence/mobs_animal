@@ -4,7 +4,7 @@ local S = mobs.intllib
 
 -- Chicken by JK Murray and Sirrobzeroone
 
-mobs:register_mob("mobs_animal:chicken", {
+mobs:register_mob("hades_animals:chicken", {
 stepheight = 0.6,
 	type = "animal",
 	passive = true,
@@ -29,7 +29,7 @@ stepheight = 0.6,
 	walk_velocity = 1,
 	run_velocity = 3,
 	runaway = true,
-	runaway_from = {"player", "mobs_animal:pumba"},
+	runaway_from = {"player", "hades_animals:pumba"},
 	drops = {
 		{name = "mobs:chicken_raw", chance = 1, min = 1, max = 1},
 		{name = "mobs:chicken_feather", chance = 1, min = 0, max = 2},
@@ -56,8 +56,8 @@ stepheight = 0.6,
 		run_speed = 24,
 	},
 	follow = {
-		"farming:seed_wheat", "farming:seed_cotton", "farming:seed_barley",
-		"farming:seed_oat", "farming:seed_rye"
+		"hades_farming:seed_wheat", "hades_farming:seed_cotton", "hades_farming:seed_barley",
+		"hades_farming:seed_oat", "hades_farming:seed_rye"
 	},
 	view_range = 5,
 
@@ -85,7 +85,7 @@ stepheight = 0.6,
 
 		minetest.add_item(pos, "mobs:egg")
 
-		minetest.sound_play("default_place_node_hard", {
+		minetest.sound_play("hades_sounds_place_node_hard_1", {
 			pos = pos,
 			gain = 1.0,
 			max_hear_distance = 5,
@@ -94,7 +94,7 @@ stepheight = 0.6,
 })
 
 
-local spawn_on = {"default:dirt_with_grass"}
+local spawn_on = {"hades_core:dirt_with_grass"}
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = {"ethereal:bamboo_dirt", "ethereal:prairie_dirt"}
@@ -103,7 +103,7 @@ end
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:chicken",
+	name = "hades_animals:chicken",
 	nodes = spawn_on,
 	neighbors = {"group:grass"},
 	min_light = 14,
@@ -116,15 +116,15 @@ mobs:spawn({
 end
 
 
-mobs:register_egg("mobs_animal:chicken", S("Chicken"), "mobs_chicken_inv.png", 0)
+mobs:register_egg("hades_animals:chicken", S("Chicken"), "mobs_chicken_inv.png", 0)
 
 
-mobs:alias_mob("mobs:chicken", "mobs_animal:chicken") -- compatibility
+mobs:alias_mob("mobs:chicken", "hades_animals:chicken") -- compatibility
 
 
 -- egg entity
 
-mobs:register_arrow("mobs_animal:egg_entity", {
+mobs:register_arrow("hades_animals:egg_entity", {
 	visual = "sprite",
 	visual_size = {x=.5, y=.5},
 	textures = {"mobs_chicken_egg.png"},
@@ -160,7 +160,7 @@ mobs:register_arrow("mobs_animal:egg_entity", {
 			return
 		end
 
-		local mob = minetest.add_entity(pos, "mobs_animal:chicken")
+		local mob = minetest.add_entity(pos, "hades_animals:chicken")
 		local ent2 = mob:get_luaentity()
 
 		mob:set_properties({
@@ -196,7 +196,7 @@ local mobs_shoot_egg = function (item, player, pointed_thing)
 
 	local playerpos = player:get_pos()
 
-	minetest.sound_play("default_place_node_hard", {
+	minetest.sound_play("hades_sounds_place_node_hard_1", {
 		pos = playerpos,
 		gain = 1.0,
 		max_hear_distance = 5,
@@ -206,7 +206,7 @@ local mobs_shoot_egg = function (item, player, pointed_thing)
 		x = playerpos.x,
 		y = playerpos.y +1.5,
 		z = playerpos.z
-	}, "mobs_animal:egg_entity")
+	}, "hades_animals:egg_entity")
 
 	local ent = obj:get_luaentity()
 	local dir = player:get_look_dir()

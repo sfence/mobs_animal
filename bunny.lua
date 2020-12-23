@@ -4,7 +4,7 @@ local S = mobs.intllib
 
 -- Bunny by ExeterDad
 
-mobs:register_mob("mobs_animal:bunny", {
+mobs:register_mob("hades_animals:bunny", {
 stepheight = 0.6,
 	type = "animal",
 	passive = true,
@@ -26,7 +26,7 @@ stepheight = 0.6,
 	walk_velocity = 1,
 	run_velocity = 2,
 	runaway = true,
-	runaway_from = {"mobs_animal:pumba", "player"},
+	runaway_from = {"hades_animals:pumba", "player"},
 	jump = true,
 	jump_height = 6,
 	drops = {
@@ -46,10 +46,10 @@ stepheight = 0.6,
 		punch_start = 16,
 		punch_end = 24,
 	},
-	follow = {"farming:carrot", "farming_plus:carrot_item", "default:grass_1"},
+	follow = {"hades_farming:carrot", "hades_farming_plus:carrot_item", "hades_core:grass_1"},
 	view_range = 8,
 	replace_rate = 10,
-	replace_what = {"farming:carrot_7", "farming:carrot_8", "farming_plus:carrot"},
+	replace_what = {"hades_farming:carrot_7", "hades_farming:carrot_8", "hades_farming_plus:carrot"},
 	replace_with = "air",
 	on_rightclick = function(self, clicker)
 
@@ -90,12 +90,12 @@ stepheight = 0.6,
 			self.object:set_properties({textures = self.base_texture})
 		-- brown desert bunny
 		elseif minetest.find_node_near(pos, 1,
-				{"default:desert_sand", "default:desert_stone"}) then
+				{"hades_core:fertile_sand", "hades_core:stone_baked"}) then
 			self.base_texture = {"mobs_bunny_brown.png"}
 			self.object:set_properties({textures = self.base_texture})
 		-- grey stone bunny
 		elseif minetest.find_node_near(pos, 1,
-				{"default:stone", "default:gravel"}) then
+				{"hades_core:stone", "hades_core:gravel"}) then
 			self.base_texture = {"mobs_bunny_grey.png"}
 			self.object:set_properties({textures = self.base_texture})
 		end
@@ -107,7 +107,7 @@ stepheight = 0.6,
 })
 
 
-local spawn_on = "default:dirt_with_grass"
+local spawn_on = "hades_core:dirt_with_grass"
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = "ethereal:prairie_dirt"
@@ -115,7 +115,7 @@ end
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:bunny",
+	name = "hades_animals:bunny",
 	nodes = {spawn_on},
 	neighbors = {"group:grass"},
 	min_light = 14,
@@ -128,10 +128,10 @@ mobs:spawn({
 end
 
 
-mobs:register_egg("mobs_animal:bunny", S("Bunny"), "mobs_bunny_inv.png", 0)
+mobs:register_egg("hades_animals:bunny", S("Bunny"), "mobs_bunny_inv.png", 0)
 
 
-mobs:alias_mob("mobs:bunny", "mobs_animal:bunny") -- compatibility
+mobs:alias_mob("mobs:bunny", "hades_animals:bunny") -- compatibility
 
 
 -- raw rabbit

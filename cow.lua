@@ -4,7 +4,7 @@ local S = mobs.intllib
 
 -- Cow by sirrobzeroone
 
-mobs:register_mob("mobs_animal:cow", {
+mobs:register_mob("hades_animals:cow", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
@@ -59,14 +59,19 @@ mobs:register_mob("mobs_animal:cow", {
 		die_loop = false,
 	},
 	follow = {
-		"farming:wheat", "default:grass_1", "farming:barley",
-		"farming:oat", "farming:rye"
+		"hades_farming:wheat", "hades_core:grass_1"
 	},
+  --[[
+	follow = {
+		"hades_farming:wheat", "hades_core:grass_1", "hades_farming:barley",
+		"hades_farming:oat", "hades_farming:rye"
+	},
+  --]]
 	view_range = 8,
 	replace_rate = 10,
 	replace_what = {
 		{"group:grass", "air", 0},
-		{"default:dirt_with_grass", "default:dirt", -1}
+		{"hades_core:dirt_with_grass", "hades_core:dirt", -1}
 	},
 --	stay_near = {{"farming:straw", "group:grass"}, 10},
 	fear_height = 2,
@@ -137,8 +142,8 @@ mobs:register_mob("mobs_animal:cow", {
 
 if not mobs.custom_spawn_animal then
 mobs:spawn({
-	name = "mobs_animal:cow",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
+	name = "hades_animals:cow",
+	nodes = {"hades_core:dirt_with_grass", "ethereal:green_dirt"},
 	neighbors = {"group:grass"},
 	min_light = 14,
 	interval = 60,
@@ -150,10 +155,10 @@ mobs:spawn({
 end
 
 
-mobs:register_egg("mobs_animal:cow", S("Cow"), "mobs_cow_inv.png")
+mobs:register_egg("hades_animals:cow", S("Cow"), "mobs_cow_inv.png")
 
 
-mobs:alias_mob("mobs:cow", "mobs_animal:cow") -- compatibility
+mobs:alias_mob("mobs:cow", "hades_animals:cow") -- compatibility
 
 
 -- bucket of milk
@@ -215,7 +220,7 @@ else -- some saplings are high in sodium so makes a good replacement item
 minetest.register_craft({
 	type = "shapeless",
 	output = "mobs:butter",
-	recipe = {"mobs:bucket_milk", "default:sapling"},
+	recipe = {"mobs:bucket_milk", "hades_trees:sapling"},
 	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
 })
 end
@@ -242,7 +247,7 @@ minetest.register_node(":mobs:cheeseblock", {
 	tiles = {"mobs_cheeseblock.png"},
 	is_ground_content = false,
 	groups = {crumbly = 3},
-	sounds = default.node_sound_dirt_defaults()
+	sounds = hades_sounds.node_sound_dirt_defaults()
 })
 
 minetest.register_craft({
