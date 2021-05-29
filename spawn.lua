@@ -1,4 +1,16 @@
 
+mobs:spawn({
+	name = "hades_animals:bee",
+	nodes = {"mobs:beehive"},
+	neighbors = {"air"},
+	min_light = 14,
+	interval = 60,
+	chance = 20,
+	min_height = -10,
+	max_height = 300,
+	day_toggle = true,
+})
+
 --[[ Spawn Template, defaults to values shown if line not provided
 
 mobs:spawn({

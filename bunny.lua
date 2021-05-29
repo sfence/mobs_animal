@@ -46,10 +46,10 @@ stepheight = 0.6,
 		punch_start = 16,
 		punch_end = 24,
 	},
-	follow = {"hades_farming:carrot", "hades_farming_plus:carrot_item", "hades_core:grass_1"},
+	follow = {"hades_extrafarming:carrot", "hades_core:grass_1"},
 	view_range = 8,
 	replace_rate = 10,
-	replace_what = {"hades_farming:carrot_7", "hades_farming:carrot_8", "hades_farming_plus:carrot"},
+	replace_what = {"hades_extrafarming:carrot_7", "hades_extrafarming:carrot_8"},
 	replace_with = "air",
 	on_rightclick = function(self, clicker)
 
@@ -130,6 +130,9 @@ end
 
 mobs:register_egg("hades_animals:bunny", S("Bunny"), "mobs_bunny_inv.png", 0)
 
+minetest.override_item("hades_animals:bunny", {
+    _tt_help = "Eat carrot and grass.",
+  })
 
 mobs:alias_mob("mobs:bunny", "hades_animals:bunny") -- compatibility
 
@@ -147,7 +150,7 @@ minetest.register_craftitem(":mobs:rabbit_cooked", {
 	description = S("Cooked Rabbit"),
 	inventory_image = "mobs_rabbit_cooked.png",
 	on_use = minetest.item_eat(5),
-	groups = {food_meat = 1, food_rabbit = 1, flammable = 2},
+	groups = {food_meat = 1, food_rabbit = 1, flammable = 2, food = 2, eatable = 5},
 })
 
 minetest.register_craft({

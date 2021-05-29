@@ -56,8 +56,8 @@ stepheight = 0.6,
 		run_speed = 24,
 	},
 	follow = {
-		"hades_farming:seed_wheat", "hades_farming:seed_cotton", "hades_farming:seed_barley",
-		"hades_farming:seed_oat", "hades_farming:seed_rye"
+		"hades_farming:seed_wheat", "hades_farming:seed_cotton", "hades_extrafarming:seed_barley",
+		"hades_extrafarming:seed_oat", "hades_extrafarming:seed_rye"
 	},
 	view_range = 5,
 
@@ -118,6 +118,9 @@ end
 
 mobs:register_egg("hades_animals:chicken", S("Chicken"), "mobs_chicken_inv.png", 0)
 
+minetest.override_item("hades_animals:chicken", {
+    _tt_help = "Eat seeds of wheat, cotton, barley, oat and rye.",
+  })
 
 mobs:alias_mob("mobs:chicken", "hades_animals:chicken") -- compatibility
 
@@ -289,7 +292,7 @@ minetest.register_craftitem(":mobs:chicken_cooked", {
 description = S("Cooked Chicken"),
 	inventory_image = "mobs_chicken_cooked.png",
 	on_use = minetest.item_eat(6),
-	groups = {food_meat = 1, food_chicken = 1, flammable = 2},
+	groups = {food_meat = 1, food_chicken = 1, flammable = 2, food = 2, eatable = 6},
 })
 
 minetest.register_craft({

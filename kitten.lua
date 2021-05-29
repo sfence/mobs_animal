@@ -38,7 +38,7 @@ stepheight = 1.1,
 	runaway = true,
 	jump = false,
 	drops = {
-		{name = "farming:string", chance = 1, min = 0, max = 1},
+		{name = "hades_farming:string", chance = 1, min = 0, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 5,
@@ -132,6 +132,9 @@ end
 
 mobs:register_egg("hades_animals:kitten", S("Kitten"), "mobs_kitten_inv.png", 0)
 
+minetest.override_item("hades_animals:kitten", {
+    _tt_help = "Eat rat, raw fish, clown fish, tropical fish and edible fish..",
+  })
 
 mobs:alias_mob("mobs:kitten", "hades_animals:kitten") -- compatibility
 

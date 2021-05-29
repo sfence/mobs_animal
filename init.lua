@@ -38,7 +38,10 @@ end
 
 
 -- Lucky Blocks
-dofile(path .. "lucky_block.lua")
+--dofile(path .. "lucky_block.lua")
+
+-- Hades Revisited support
+dofile(path .. "hades.lua")
 
 
 print (S("[MOD] Mobs Redo Animals loaded"))

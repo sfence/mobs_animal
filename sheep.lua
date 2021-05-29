@@ -25,7 +25,7 @@ local all_colours = {
 for _, col in ipairs(all_colours) do
 
 	mobs:register_mob("hades_animals:sheep_"..col[1], {
-		stay_near = {"farming:straw", 10},
+		stay_near = {"hades_farming:straw", 10},
 		stepheight = 0.6,
 		type = "animal",
 		passive = true,
@@ -72,14 +72,14 @@ for _, col in ipairs(all_colours) do
 			die_rotate = true,
 		},
 		follow = {
-			"farming:wheat", "default:grass_1", "farming:barley",
-			"farming:oat", "farming:rye"
+			"hades_farming:wheat", "hades_core:grass_1", "hades_extrafarming:barley",
+			"hades_extrafarming:oat", "hades_extrafarming:rye"
 		},
 		view_range = 8,
 		replace_rate = 10,
 		replace_what = {
 			{"group:grass", "air", -1},
-			{"default:dirt_with_grass", "default:dirt", -2}
+			{"hades_core:dirt_with_grass", "hades_core:dirt", -2}
 		},
 		fear_height = 3,
 		on_replace = function(self, pos, oldnode, newnode)
@@ -204,9 +204,13 @@ for _, col in ipairs(all_colours) do
 			if mobs:capture_mob(self, clicker, 0, 5, 60, false, nil) then return end
 		end
 	})
+  
+  mobs:register_egg("hades_animals:sheep_"..col[1], S("@1 Sheep", col[2]), "wool_"..col[1]..".png^mobs_sheep_inv.png")
 
-mobs:register_egg("hades_animals:sheep_"..col[1], S("@1 Sheep", col[2]), "wool_"..col[1]..".png^mobs_sheep_inv.png")
-
+  minetest.override_item("hades_animals:sheep_"..col[1], {
+      _tt_help = "Eat wheat, grass, barley, oat and rye.",
+    })
+  
 	-- compatibility
 	mobs:alias_mob("mobs:sheep_" .. col[1], "hades_animals:sheep_" .. col[1])
 
@@ -243,7 +247,7 @@ minetest.register_craftitem(":mobs:mutton_cooked", {
 	description = S("Cooked Mutton"),
 	inventory_image = "mobs_mutton_cooked.png",
 	on_use = minetest.item_eat(6),
-	groups = {food_meat = 1, food_mutton = 1, flammable = 2},
+	groups = {food_meat = 1, food_mutton = 1, flammable = 2, food = 2, eatable = 6},
 })
 
 minetest.register_craft({

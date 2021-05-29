@@ -29,8 +29,14 @@ stepheight = 0.6,
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
+	follow = {
+		"hades_farming:seed_wheat",
+	},
 	fear_height = 2,
 	on_rightclick = function(self, clicker)
+		-- feed or tame
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, 50, 90, 0, true, "hades_animals:rat")
 	end,
 --[[
@@ -83,6 +89,9 @@ end
 
 mobs:register_egg("hades_animals:rat", S("Rat"), "mobs_rat_inv.png")
 
+minetest.override_item("hades_animals:rat", {
+    _tt_help = "Eat wheat seeds.",
+  })
 
 mobs:alias_mob("mobs:rat", "hades_animals:rat") -- compatibility
 
@@ -92,7 +101,7 @@ minetest.register_craftitem(":mobs:rat_cooked", {
 	description = S("Cooked Rat"),
 	inventory_image = "mobs_cooked_rat.png",
 	on_use = minetest.item_eat(3),
-	groups = {food_rat = 1, flammable = 2},
+	groups = {food_rat = 1, flammable = 2, food = 2, eatable = 3},
 })
 
 minetest.register_craft({

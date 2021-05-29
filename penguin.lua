@@ -43,7 +43,7 @@ stepheight = 0.6,
 		fly_end = 95,
 		-- 50-70 is slide/water idle
 	},
-	fly_in = {"default:water_source", "default:water_flowing"},
+	fly_in = {"hades_core:water_source", "hades_core:water_flowing"},
 	floats = 0,
 	follow = {
 		"ethereal:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical",
@@ -74,3 +74,8 @@ mobs:spawn({
 end
 
 mobs:register_egg("hades_animals:penguin", S("Penguin"), "mobs_penguin_inv.png")
+
+minetest.override_item("hades_animals:penguin", {
+    _tt_help = "Eat raw fish, clown fish, tropical fish, edible fish.",
+  })
+

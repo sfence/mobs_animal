@@ -59,14 +59,9 @@ mobs:register_mob("hades_animals:cow", {
 		die_loop = false,
 	},
 	follow = {
-		"hades_farming:wheat", "hades_core:grass_1"
+		"hades_farming:wheat", "hades_core:grass_1", "hades_extrafarming:barley",
+		"hades_extrafarming:oat", "hades_extrafarming:rye"
 	},
-  --[[
-	follow = {
-		"hades_farming:wheat", "hades_core:grass_1", "hades_farming:barley",
-		"hades_farming:oat", "hades_farming:rye"
-	},
-  --]]
 	view_range = 8,
 	replace_rate = 10,
 	replace_what = {
@@ -95,7 +90,7 @@ mobs:register_mob("hades_animals:cow", {
 		local name = clicker:get_player_name()
 
 		-- milk cow with empty bucket
-		if tool:get_name() == "bucket:bucket_empty" then
+		if tool:get_name() == "hades_bucket:bucket_empty" then
 
 			--if self.gotten == true
 			if self.child == true then
@@ -157,6 +152,9 @@ end
 
 mobs:register_egg("hades_animals:cow", S("Cow"), "mobs_cow_inv.png")
 
+minetest.override_item("hades_animals:cow", {
+    _tt_help = "Eat wheat, grass, barley, oat and rye.",
+  })
 
 mobs:alias_mob("mobs:cow", "hades_animals:cow") -- compatibility
 
@@ -166,7 +164,7 @@ minetest.register_craftitem(":mobs:bucket_milk", {
 	description = S("Bucket of Milk"),
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
-	on_use = minetest.item_eat(8, "bucket:bucket_empty"),
+	on_use = minetest.item_eat(8, "hades_bucket:bucket_empty"),
 	groups = {food_milk = 1, flammable = 3, drink = 1},
 })
 
@@ -186,7 +184,7 @@ minetest.register_craft({
 		"vessels:drinking_glass", "vessels:drinking_glass",
 		"mobs:bucket_milk"
 	},
-	replacements = { {"mobs:bucket_milk", "bucket:bucket_empty"} }
+	replacements = { {"mobs:bucket_milk", "hades_bucket:bucket_empty"} }
 })
 
 minetest.register_craft({
@@ -195,7 +193,7 @@ minetest.register_craft({
 	recipe = {
 		"mobs:glass_milk", "mobs:glass_milk",
 		"mobs:glass_milk", "mobs:glass_milk",
-		"bucket:bucket_empty"
+		"hades_bucket:bucket_empty"
 	},
 	replacements = { {"mobs:glass_milk", "vessels:drinking_glass 4"} }
 })
@@ -214,14 +212,14 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "mobs:butter",
 	recipe = {"mobs:bucket_milk", "farming:salt"},
-	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+	replacements = {{ "mobs:bucket_milk", "hades_bucket:bucket_empty"}}
 })
 else -- some saplings are high in sodium so makes a good replacement item
 minetest.register_craft({
 	type = "shapeless",
 	output = "mobs:butter",
 	recipe = {"mobs:bucket_milk", "hades_trees:sapling"},
-	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+	replacements = {{ "mobs:bucket_milk", "hades_bucket:bucket_empty"}}
 })
 end
 
@@ -238,7 +236,7 @@ minetest.register_craft({
 	output = "mobs:cheese",
 	recipe = "mobs:bucket_milk",
 	cooktime = 5,
-	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+	replacements = {{ "mobs:bucket_milk", "hades_bucket:bucket_empty"}}
 })
 
 -- cheese block

@@ -84,3 +84,8 @@ if minetest.get_modpath("ethereal") and not mobs.custom_spawn_animal then
 end
 
 mobs:register_egg("hades_animals:panda", S("Panda"), "mobs_panda_inv.png")
+
+minetest.override_item("hades_animals:panda", {
+    _tt_help = "Eat bamboo trunk.",
+  })
+

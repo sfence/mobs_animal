@@ -33,7 +33,7 @@ mobs:register_mob("hades_animals:pumba", {
 	jump = true,
 	jump_height = 6,
 	pushable = true,
-	follow = {"default:apple", "farming:potato"},
+	follow = {"hades_trees:apple", "hades_farming:potato"},
 	view_range = 10,
 	drops = {
 		{name = "mobs:pork_raw", chance = 1, min = 1, max = 3},
@@ -88,6 +88,9 @@ end
 
 mobs:register_egg("hades_animals:pumba", S("Warthog"), "mobs_pumba_inv.png")
 
+minetest.override_item("hades_animals:pumba", {
+    _tt_help = "Eat apple and potato.",
+  })
 
 mobs:alias_mob("mobs:pumba", "hades_animals:pumba") -- compatibility
 
@@ -105,7 +108,7 @@ minetest.register_craftitem(":mobs:pork_cooked", {
 	description = S("Cooked Porkchop"),
 	inventory_image = "mobs_pork_cooked.png",
 	on_use = minetest.item_eat(8),
-	groups = {food_meat = 1, food_pork = 1, flammable = 2},
+	groups = {food_meat = 1, food_pork = 1, flammable = 2, eatable = 8},
 })
 
 minetest.register_craft({
