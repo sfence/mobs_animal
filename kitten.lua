@@ -140,13 +140,13 @@ mobs:alias_mob("mobs:kitten", "hades_animals:kitten") -- compatibility
 
 
 local hairball_items = {
-	"default:stick", "default:coal_lump", "default:dry_shrub", "flowers:rose",
-	"hades_animals:rat", "default:grass_1", "farming:seed_wheat", "dye:green", "",
-	"farming:seed_cotton", "default:flint", "default:sapling", "dye:white", "",
-	"default:clay_lump", "default:paper", "default:dry_grass_1", "dye:red", "",
-	"farming:string", "mobs:chicken_feather", "default:acacia_bush_sapling", "",
-	"default:bush_sapling", "default:copper_lump", "default:iron_lump", "",
-	"dye:black", "dye:brown", "default:obsidian_shard", "default:tin_lump"
+	"hades_core:stick", "hades_core:coal_lump", "hades_core:dry_shrub", "flowers:rose",
+	"hades_animals:rat", "hades_core:grass_1", "hades_farming:seed_wheat", "dye:green", "",
+	"hades_farming:seed_cotton", "hades_core:flint", "hades_core:sapling", "dye:white", "",
+	"hades_core:clay_lump", "hades_core:paper", "hades_waterplants:waterlily", "dye:red", "",
+	"hades_farming:string", "mobs:chicken_feather", "hades_core:orange_sapling", "",
+	"hades_core:banana_sapling", "hades_core:copper_lump", "hades_core:iron_lump", "",
+	"dye:black", "dye:brown", "hades_core:obsidian_shard", "hades_core:tin_lump"
 }
 
 minetest.register_craftitem(":mobs:hairball", {

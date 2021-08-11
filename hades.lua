@@ -74,7 +74,7 @@ minetest.register_tool(":mobs:net", {
 	groups = {flammable = 2}
 })
 
-if minetest.get_modpath("farming") then
+if minetest.get_modpath("hades_extrafarming") then
 	minetest.register_craft({
 		output = "mobs:net",
 		recipe = {
