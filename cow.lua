@@ -66,7 +66,8 @@ mobs:register_mob("hades_animals:cow", {
 	replace_rate = 10,
 	replace_what = {
 		{"group:grass", "air", 0},
-		{"hades_core:dirt_with_grass", "hades_core:dirt", -1}
+		{"hades_core:dirt_with_grass", "hades_core:dirt_with_grass_l3", -1},
+		{"hades_core:dirt_with_grass_l3", "hades_core:dirt_with_grass_l2", -1}
 	},
 --	stay_near = {{"farming:straw", "group:grass"}, 10},
 	fear_height = 2,

@@ -79,7 +79,9 @@ for _, col in ipairs(all_colours) do
 		replace_rate = 10,
 		replace_what = {
 			{"group:grass", "air", -1},
-			{"hades_core:dirt_with_grass", "hades_core:dirt", -2}
+			{"hades_core:dirt_with_grass", "hades_core:dirt_with_grass_l3", -2},
+			{"hades_core:dirt_with_grass_l3", "hades_core:dirt_with_grass_l2", -2},
+			{"hades_core:dirt_with_grass_l2", "hades_core:dirt_with_grass_l1", -2}
 		},
 		fear_height = 3,
 		on_replace = function(self, pos, oldnode, newnode)
