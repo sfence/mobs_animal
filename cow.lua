@@ -166,7 +166,7 @@ minetest.register_craftitem(":mobs:bucket_milk", {
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
 	on_use = minetest.item_eat(8, "hades_bucket:bucket_empty"),
-	groups = {food_milk = 1, flammable = 3, drink = 1},
+	groups = {food_milk = 1, flammable = 3, drink = 1, eatable = 8},
 })
 
 -- glass of milk
@@ -174,7 +174,7 @@ minetest.register_craftitem(":mobs:glass_milk", {
 	description = S("Glass of Milk"),
 	inventory_image = "mobs_glass_milk.png",
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
-	groups = {food_milk_glass = 1, flammable = 3, vessel = 1, drink = 1},
+	groups = {food_milk_glass = 1, flammable = 3, vessel = 1, drink = 1, eatable = 2},
 })
 
 minetest.register_craft({
@@ -205,7 +205,7 @@ minetest.register_craftitem(":mobs:butter", {
 	description = S("Butter"),
 	inventory_image = "mobs_butter.png",
 	on_use = minetest.item_eat(1),
-	groups = {food_butter = 1, flammable = 2},
+	groups = {food_butter = 1, flammable = 2, eatable = 1},
 })
 
 if minetest.get_modpath("hades_extrafarming") and farming and farming.mod then
@@ -229,7 +229,7 @@ minetest.register_craftitem(":mobs:cheese", {
 	description = S("Cheese"),
 	inventory_image = "mobs_cheese.png",
 	on_use = minetest.item_eat(4),
-	groups = {food_cheese = 1, flammable = 2},
+	groups = {food_cheese = 1, flammable = 2, eatable = 4},
 })
 
 minetest.register_craft({

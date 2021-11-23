@@ -29,7 +29,7 @@ minetest.register_craftitem(":mobs:meat_raw", {
 	description = S("Raw Meat"),
 	inventory_image = "mobs_meat_raw.png",
 	on_use = minetest.item_eat(3),
-	groups = {food_meat_raw = 1, flammable = 2}
+	groups = {food_meat_raw = 1, flammable = 2, eatable = 3}
 })
 
 -- cooked meat

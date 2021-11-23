@@ -7,7 +7,7 @@ local hairball = minetest.settings:get("mobs_hairball")
 mobs:register_mob("hades_animals:kitten", {
 stepheight = 0.6,
 	type = "animal",
-specific_attack = {"hades_animals:rat"},
+specific_attack = {"hades_animals:rat", "hades_better_rat:rat"},
 damage = 1,
 attack_type = "dogfight",
 attack_animals = true, -- so it can attack rat
@@ -53,8 +53,8 @@ stepheight = 1.1,
 		stoodup_end = 0,
 	},
 	follow = {
-		"hades_animals:rat", "ethereal:fish_raw", "mobs_fish:clownfish",
-		"mobs_fish:tropical", "xocean:fish_edible"
+		"hades_animals:rat", "ethereal:fish_raw", "hades_fish:clownfish",
+		"hades_fish:tropical", "hades_xocean:fish_edible"
 	},
 	view_range = 8,
 
