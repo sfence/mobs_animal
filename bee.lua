@@ -88,11 +88,11 @@ minetest.register_node(":mobs:beehive", {
 
 		local meta = minetest.get_meta(pos)
 
-		meta:set_string("formspec", "size[8,6]"
+		meta:set_string("formspec", "size[10,6]"
 			..default.gui_bg..default.gui_bg_img..default.gui_slots
 			.. "image[3,0.8;0.8,0.8;mobs_bee_inv.png]"
 			.. "list[current_name;beehive;4,0.5;1,1;]"
-			.. "list[current_player;main;0,2.35;8,4;]"
+			.. "list[current_player;main;0,2.35;10,4;]"
 			.. "listring[]")
 
 		meta:get_inventory():set_size("beehive", 1)

@@ -46,8 +46,8 @@ stepheight = 0.6,
 	fly_in = {"hades_core:water_source", "hades_core:water_flowing"},
 	floats = 0,
 	follow = {
-		"ethereal:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical",
-		"mobs_fish:clownfish_set", "mobs_fish:tropical_set", "xocean:fish_edible"
+		"ethereal:fish_raw", "hades_fish:clownfish", "hades_fish:tropical",
+		"hades_fish:clownfish_set", "hades_fish:tropical_set", "hades_xocean:fish_edible"
 	},
 	view_range = 5,
 

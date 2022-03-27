@@ -270,7 +270,7 @@ minetest.register_craftitem(":mobs:chicken_egg_fried", {
 	description = S("Fried Egg"),
 	inventory_image = "mobs_chicken_egg_fried.png",
 	on_use = minetest.item_eat(2),
-	groups = {food_egg_fried = 1, flammable = 2},
+	groups = {food_egg_fried = 1, flammable = 2, food = 2, eatable = 2},
 })
 
 minetest.register_craft({
