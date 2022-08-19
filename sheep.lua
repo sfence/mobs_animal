@@ -129,7 +129,7 @@ for _, col in ipairs(all_colours) do
 				if self.gotten ~= false
 				or self.child ~= false
 				or name ~= self.owner
-				or not minetest.get_modpath("wool") then
+				or not minetest.get_modpath("hades_cloth") then
 					return
 				end
 
@@ -137,7 +137,7 @@ for _, col in ipairs(all_colours) do
 
 				local obj = minetest.add_item(
 					self.object:get_pos(),
-					ItemStack( "wool:" .. col[1] .. " " .. math.random(1, 3) )
+					ItemStack( "hades_cloth:" .. col[1] .. " " .. math.random(1, 3) )
 				)
 
 				if obj then
@@ -162,7 +162,7 @@ for _, col in ipairs(all_colours) do
 			end
 
 			--are we coloring?
-			if itemname:find("dye:") then
+			if itemname:find("hades_dye:") then
 
 				if self.gotten == false
 				and self.child == false
